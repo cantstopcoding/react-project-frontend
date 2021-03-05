@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom'
 import {fetchAccounts} from '../actions/fetchAccounts'
 import AccountInput from '../components/AccountInput';
 import Accounts from '../components/Accounts';
+import Account from '../components/Account';
 
 class AccountsContainer extends Component {
     
@@ -14,9 +15,9 @@ class AccountsContainer extends Component {
     render() {
         return (
             <div>
-                <Route path='/accounts/new' component={AccountInput} />
-                <AccountInput accounts={this.props.accounts}/><br/><br/>
-                <Accounts accounts={this.props.accounts}/>
+                <Route path='/accounts/new' component={AccountInput} /><br />
+                <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>} />
+                <Route exact path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>} />
             </div>
         )
     }
