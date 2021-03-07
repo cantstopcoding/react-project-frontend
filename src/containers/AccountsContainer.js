@@ -18,7 +18,7 @@ class AccountsContainer extends Component {
                 <Switch>
                     <Route path='/accounts/new' component={AccountInput} />
                     <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>} />
-                    <Route exact path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>} />
+                    <Route path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>} />
                 </Switch>
             </div>
         )
