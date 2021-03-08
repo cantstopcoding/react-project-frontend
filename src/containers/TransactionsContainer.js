@@ -7,7 +7,7 @@ class TransactionsContainer extends Component {
         return (
             <div>
                 <TransactionInput/>
-                <Transactions/>
+                <Transactions transactions={this.props.account && this.props.account.transactions}/>
             </div>
         )
     }
