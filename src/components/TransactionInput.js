@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
+import {addTransaction}  from '../actions/addTransaction';
 
 class TransactionInput extends Component {
     
@@ -16,6 +17,7 @@ class TransactionInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.addTransaction(this.state, this.props.id)
     }
 
     render () {
@@ -36,4 +38,4 @@ class TransactionInput extends Component {
     }
 }
 
-export default connect(null)(TransactionInput)
+export default connect(null, addTransaction)(TransactionInput)
