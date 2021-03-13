@@ -17,13 +17,13 @@ class TransactionInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addTransaction(this.state, this.props.id)
+        this.props.addTransaction(this.state, this.props.account.id)
     }
 
     render () {
         return (
             <div>
-                <form onSubmit = {this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <label>Transaction Type:</label>
                     <select name='kind' value={this.state.kind} onChange={this.handleChange}>
                         <option>deposit</option>
@@ -38,4 +38,4 @@ class TransactionInput extends Component {
     }
 }
 
-export default connect(null, addTransaction)(TransactionInput)
+export default connect(null, {addTransaction})(TransactionInput)
