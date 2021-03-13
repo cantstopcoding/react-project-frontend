@@ -18,6 +18,10 @@ class TransactionInput extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addTransaction(this.state, this.props.account.id)
+        this.setState({
+            kind: 'deposit',
+            amount: ''
+        })
     }
 
     render () {
