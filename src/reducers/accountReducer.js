@@ -16,7 +16,6 @@ export default function accountReducer(state = {
           })
           return {...state, accounts: accounts}
         case 'DELETE_TRANSACTION':
-          debugger;
           let accountsTWO = state.accounts.map(account => {
             if (account.id === action.payload.id) {
               return action.payload
