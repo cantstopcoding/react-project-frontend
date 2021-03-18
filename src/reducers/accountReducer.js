@@ -24,6 +24,15 @@ export default function accountReducer(state = {
             }
           })
           return {...state, accounts: accountsTWO}
+        case 'EDIT_ACCOUNT':
+          let accountsThree = state.accounts.map(account => {
+            if (account.id === action.payload.id) {
+              return action.payload
+            } else {
+              return account
+            }
+          })
+          return {...state, accounts: accountsThree}
         default:
             return state 
     }
