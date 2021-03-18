@@ -14,7 +14,8 @@ const Account = (props) => {
             <h2>
                 {account ? account.name : null} - {account ? account.balance : null}
             </h2>
-            <TransactionsContainer account={account} />
+            <TransactionsContainer account={account} /><br/>
+            Edit Account:
             <AccountEdit account={account}/>
         </div>
     )
