@@ -1,10 +1,15 @@
 import React, {Component} from 'react'
+import Items from '../components/Items'
+import ItemInput from '../components/ItemInput'
 
 class ItemsContainer extends Component {
     render() {
+        return(
         <div>
-            AccountsContainer
+            <Items />
+            <ItemInput />
         </div>
+        )
     }
 }
 
