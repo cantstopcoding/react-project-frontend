@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {deleteTransaction} from '../actions/deleteTransaction'
 
 const Transactions = (props) => {
-    console.log(props.transactions)
+    console.log('TRANSACTION', props.transactions)
     
     const handleDelete = (transaction) => {
         // debugger

@@ -7,12 +7,9 @@ import Accounts from '../components/Accounts';
 import Account from '../components/Account';
 
 class AccountsContainer extends Component {
-    
-    componentDidMount() {
-        this.props.fetchAccounts()
-    }
-    
+
     render() {
+        console.log('ACCOUNT CONTAINER', this.props.accounts)
         return (
             <div>
                 <Switch>
@@ -31,4 +28,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchAccounts})(AccountsContainer)
+export default connect(mapStateToProps, fetchAccounts)(AccountsContainer)

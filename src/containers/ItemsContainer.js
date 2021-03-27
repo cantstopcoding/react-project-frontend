@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux' 
 import Items from '../components/Items'
 import ItemInput from '../components/ItemInput'
 
@@ -13,4 +14,10 @@ class ItemsContainer extends Component {
     }
 }
 
-export default ItemsContainer
+// mapStateToProps = state => {
+//     return {
+        
+//     }
+// }
+
+export default connect()(ItemsContainer)

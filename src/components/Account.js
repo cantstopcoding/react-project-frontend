@@ -6,8 +6,11 @@ import TransactionsContainer from '../containers/TransactionsContainer';
 
 const Account = (props) => {
     // let account = props.accounts[props.match.params.id - 1]
-    let account = props.accounts.filter(account => account.id == props.match.params.id)[0]
-    console.log(account)
+    console.log('ACCOUNT PROPS', props)
+    let account = props.accounts.filter(account => {
+        console.log('MATCH ID', account.id)
+        return `${account.id}` == props.match.params.id})[0]
+    console.log('ACCOUNT', account)
 
     return (
         <div>
