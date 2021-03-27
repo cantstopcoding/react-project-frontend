@@ -7,6 +7,9 @@ import Accounts from '../components/Accounts';
 import Account from '../components/Account';
 
 class AccountsContainer extends Component {
+    componentDidMount() {
+        this.props.fetchAccounts()
+    }
 
     render() {
         console.log('ACCOUNT CONTAINER', this.props.accounts)
@@ -24,8 +27,8 @@ class AccountsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        accounts: state.accounts
+        accounts: state.accountReducer.accounts
     }
 }
 
-export default connect(mapStateToProps, fetchAccounts)(AccountsContainer)
+export default connect(mapStateToProps, {fetchAccounts})(AccountsContainer)

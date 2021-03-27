@@ -23,4 +23,8 @@ const Account = (props) => {
         </div>
     )
 }
+Account.defaultProps = {
+    accounts: []
+}
+
 export default Account 
