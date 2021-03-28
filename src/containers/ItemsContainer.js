@@ -1,29 +1,41 @@
-import React, {Component} from 'react'
-import { connect } from 'react-redux' 
-import Items from '../components/Items'
-import ItemInput from '../components/ItemInput'
-import { fetchItems } from '../actions/fetchItems'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import { fetchItems } from "../actions/fetchItems";
+import Items from "../components/Items";
+import Item from "../components/Item";
 
 class ItemsContainer extends Component {
-    componentDidMount() {
-        this.props.fetchItems()
-    }
+  componentDidMount() {
+    this.props.fetchItems();
+  }
 
-    render() {
-        console.log('ITMES', this.props.items)
-        return(
-        <div>
-            <Items items={this.props.items} />
-            <ItemInput />
-        </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route
+            path="/items/:id"
+            render={(routerProps) => (
+              <Item {...routerProps} items={this.props.items} />
+            )}
+          />
+          <Route
+            path="/items"
+            render={(routerProps) => (
+              <Items {...routerProps} items={this.props.items} />
+            )}
+          />
+        </Switch>
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = state => {
-    return {
-        ...state.itemReducer
-    }
-}
+const mapStateToProps = (state) => {
+  return {
+    ...state.itemReducer,
+  };
+};
 
-export default connect(mapStateToProps, {fetchItems})(ItemsContainer)
+export default connect(mapStateToProps, { fetchItems })(ItemsContainer);
