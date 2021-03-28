@@ -13,7 +13,10 @@ const Item = (props) => {
   return (
     <div>
       <h2>
-        {item ? item.name : null} - {item ? item.balance : null}
+        {item ? item.name : null} - ${item ? item.price : null}
+        <br />
+        {item ? <img src={item.image_url} /> : null}
+        {/* don't like that it's in ruby syntax */}
       </h2>
       <TransactionsContainer item={item} />
     </div>
