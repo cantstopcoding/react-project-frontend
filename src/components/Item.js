@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-// import ItemEdit from "./ItemEdit";
 
 import TransactionsContainer from "../containers/TransactionsContainer";
 
@@ -17,9 +16,6 @@ const Item = (props) => {
         {item ? item.name : null} - {item ? item.balance : null}
       </h2>
       <TransactionsContainer item={item} />
-      <br />
-      {/* <h3>Edit Item:</h3>
-      <ItemEdit item={item} /> */}
     </div>
   );
 };
