@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import ItemEdit from "./ItemEdit";
+// import ItemEdit from "./ItemEdit";
 
 import TransactionsContainer from "../containers/TransactionsContainer";
 
@@ -18,8 +18,8 @@ const Item = (props) => {
       </h2>
       <TransactionsContainer item={item} />
       <br />
-      <h3>Edit Item:</h3>
-      <ItemEdit item={item} />
+      {/* <h3>Edit Item:</h3>
+      <ItemEdit item={item} /> */}
     </div>
   );
 };
