@@ -1,6 +1,8 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import AccountEdit from "./AccountEdit";
+import {fetchAccount} from '../actions/fetchAccount'
+import {connect} from 'react-redux';    
+
 
 import TransactionsContainer from "../containers/TransactionsContainer";
 
@@ -10,6 +12,18 @@ const Account = (props) => {
     // match.params.id is a string, not a number!!!
     (account) => `${account.id}` == props.match.params.id
   )[0];
+
+  React.useEffect(() => {
+    handleSetAccount()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleSetAccount = () => {
+    let account = props.match.params.id
+    props.fetchAccount(account)
+    debugger
+    localStorage.setItem("accountID", account)
+}
 
   return (
     <div>
@@ -24,4 +38,4 @@ const Account = (props) => {
   );
 };
 
-export default Account;
+export default connect(null, {fetchAccount})(Account)

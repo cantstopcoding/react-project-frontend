@@ -7,7 +7,6 @@ const Transactions = (props) => {
     console.log('TRANSACTION', props.transactions)
     
     const handleDelete = (transaction) => {
-        // debugger
         props.deleteTransaction(transaction.id, transaction.account_id)
     }
 

@@ -16,18 +16,21 @@ class AccountsContainer extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/accounts/new" component={AccountInput} />
+          <Route exact path="/accounts/new" component={AccountInput} />
           <Route
+            exact
             path="/accounts/:id"
-            render={(routerProps) => (
-              <Account {...routerProps} accounts={this.props.accounts} />
-            )}
+            render={(routerProps) => {
+             return <Account {...routerProps} accounts={this.props.accounts} />
+            }}
           />
           <Route
+            exact
             path="/accounts"
-            render={(routerProps) => (
-              <Accounts {...routerProps} accounts={this.props.accounts} />
-            )}
+            render={(routerProps) => {
+              console.log(routerProps, "hii")
+              return <Accounts {...routerProps} accounts={this.props.accounts} />
+            }}
           />
         </Switch>
       </div>

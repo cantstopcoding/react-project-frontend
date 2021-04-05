@@ -1,5 +1,6 @@
 export default function accountReducer(state = {
-    accounts: []
+    accounts: [],
+    account: ""
 }, action) {
     switch (action.type) {
         case 'FETCH_ACCOUNTS':
@@ -33,6 +34,9 @@ export default function accountReducer(state = {
             }
           })
           return {...state, accounts: accountsThree}
+          case 'SET_CURRENT_ACCOUNT':
+          const newAccount = action.payload
+          return {...state, account: newAccount}
         default:
             return state 
     }
