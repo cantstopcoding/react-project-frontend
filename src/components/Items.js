@@ -1,30 +1,25 @@
-import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import React from 'react-redux';
+import ItemInput from './ItemInput';
+import {connect} from 'react-redux'
+import {deleteItem} from '../actions/deleteItem'
 
 const Items = (props) => {
-  return (
-    <div>
-      {props.items.map((item) => (
-        <li key={item.id}>
-          <Link to={`/items/${item.id}`}>{item.name}</Link>
-        </li>
-      ))}
-    </div>
-  );
-};
+    console.log('ITEM', props.items)
+    
+    const handleDelete = (item) => {
+        // debugger
+        props.deleteItem(item.id, item.account_id)
+    }
 
-Items.defaultProps = {
-  items: [],
-};
+    return (
+        <div>
+            <div>
+                {props.items && props.items.map( item =>
+                    <li key={item.id}>{item.kind} - {item.amount}  <button onClick={() => handleDelete(item)}>Delete</button></li>
+                )}
+            </div>
+        </div>
+    )
+}
 
-export default Items;
-
-// return (
-//     <div>
-//         {props.accounts.map(account =>
-//             <li key={account.id}>
-//                 <Link to={`/accounts/${account.id}`}>{account.name}</Link>
-//             </li>
-//             // <Account account={account}/>
-//         )}
-//     </div>
+export default connect(null, {deleteItem})(Items)

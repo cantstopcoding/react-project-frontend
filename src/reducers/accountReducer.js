@@ -6,7 +6,7 @@ export default function accountReducer(state = {
             return {accounts: action.payload}
         case 'ADD_ACCOUNT':
             return {...state, accounts: [...state.accounts, action.payload]}
-        case 'ADD_TRANSACTION':
+        case 'ADD_ITEM':
           let accounts = state.accounts.map(account => {
             if (account.id === action.payload.id) {
               return action.payload
@@ -15,7 +15,7 @@ export default function accountReducer(state = {
             }
           })
           return {...state, accounts: accounts}
-        case 'DELETE_TRANSACTION':
+        case 'DELETE_ITEM':
           let accountsTWO = state.accounts.map(account => {
             if (account.id === action.payload.id) {
               return action.payload

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {addTransaction}  from '../actions/addTransaction';
+import {addItem}  from '../actions/addItem';
 
-class TransactionInput extends Component {
+class ItemInput extends Component {
     
     state = {
         kind: '',
@@ -17,7 +17,7 @@ class TransactionInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addTransaction(this.state, this.props.account.id)
+        this.props.addItem(this.state, this.props.account.id)
         this.setState({
             kind: 'deposit',
             amount: ''
@@ -28,12 +28,12 @@ class TransactionInput extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Transaction Type:</label>
+                    <label>Item Type:</label>
                     <select name='kind' value={this.state.kind} onChange={this.handleChange}>
                         <option>deposit</option>
                         <option>withdraw</option>
                     </select><br/>
-                    <label>Transaction Amount:</label>
+                    <label>Item Amount:</label>
                     <input type='text' name='amount' value={this.state.amount} onChange={this.handleChange}/>
                     <input type="submit"/>
                 </form>
@@ -42,4 +42,4 @@ class TransactionInput extends Component {
     }
 }
 
-export default connect(null, {addTransaction})(TransactionInput)
+export default connect(null, {addItem})(ItemInput)
