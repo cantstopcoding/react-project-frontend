@@ -13,11 +13,13 @@ const Items = (props) => {
 
   return (
     <div>
+      <h2>My Items:</h2>
       <div>
         {props.items &&
           props.items.map((item) => (
             <li key={item.id}>
-              {item.kind} - {item.amount}{" "}
+              {item.name} - Price: ${item.price}{" "}
+              {item.description}
               <button onClick={() => handleDelete(item)}>Delete</button>
             </li>
           ))}
