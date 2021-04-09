@@ -13,6 +13,7 @@ const Items = (props) => {
 
   return (
     <div>
+      <h2>My Items:</h2>
       <div>
         {props.items &&
           props.items.map((item) => (

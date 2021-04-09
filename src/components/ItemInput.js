@@ -68,6 +68,7 @@ class ItemInput extends Component {
           <br />
           <input type="submit" />
         </form>
+        <br />
       </div>
     );
   }
