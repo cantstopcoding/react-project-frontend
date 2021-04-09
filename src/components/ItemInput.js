@@ -18,32 +18,54 @@ class ItemInput extends Component {
     event.preventDefault();
     this.props.addItem(this.state, this.props.account.id);
     this.setState({
-      kind: "deposit",
-      amount: "",
+      name: "",
+      description: "",
+      price: "",
+      image_url: "",
     });
   };
 
   render() {
     return (
       <div>
+        <h2>Create an Item:</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>Item Type:</label>
-          <select
-            name="kind"
-            value={this.state.kind}
-            onChange={this.handleChange}
-          >
-            <option>deposit</option>
-            <option>withdraw</option>
-          </select>
+          <label>Name:</label>
           <br />
-          <label>Item Amount:</label>
           <input
             type="text"
-            name="amount"
-            value={this.state.amount}
+            name="name"
+            value={this.state.name}
             onChange={this.handleChange}
           />
+          <br />
+          <label>Description:</label>
+          <br />
+          <input
+            type="text"
+            name="description"
+            value={this.state.description}
+            onChange={this.handleChange}
+          />
+          <br />
+          <label>Price:</label>
+          <br />
+          <input
+            type="text"
+            name="price"
+            value={this.state.price}
+            onChange={this.handleChange}
+          />
+          <br />
+          <label>Image Url:</label>
+          <br />
+          <input
+            type="text"
+            name="image_url"
+            value={this.state.image_url}
+            onChange={this.handleChange}
+          />
+          <br />
           <input type="submit" />
         </form>
       </div>
