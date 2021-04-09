@@ -4,8 +4,10 @@ import { addItem } from "../actions/addItem";
 
 class ItemInput extends Component {
   state = {
-    kind: "",
-    amount: "",
+    name: "",
+    description: "",
+    price: "",
+    image_url: "",
   };
 
   handleChange = (event) => {
