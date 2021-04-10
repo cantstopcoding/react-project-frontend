@@ -20,8 +20,8 @@ const Items = (props) => {
             <li key={item.id}>
               <Link to={`accounts/${item.account_id}/items/${item.id}`}>
                 {item.name} - Price: ${item.price} {item.description}
-                <button onClick={() => handleDelete(item)}>Delete</button>
               </Link>
+              <button onClick={() => handleDelete(item)}>Delete</button>
             </li>
           ))}
       </div>
