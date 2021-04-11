@@ -38,9 +38,9 @@ export default function accountReducer(
           return account;
         }
       });
+      return { ...state, accounts: accountsThree };
     case "EDIT_ITEM":
-      debugger
-      return {...state, item: action.payload}
+      return { ...state, item: action.payload };
     default:
       return state;
   }
