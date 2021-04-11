@@ -2,6 +2,7 @@ import React from "react-redux";
 import { connect } from "react-redux";
 import { Route, Link } from "react-router-dom";
 import { deleteItem } from "../actions/deleteItem";
+import Item from "../components/Item";
 
 const Items = (props) => {
   console.log("ITEM", props.items);
@@ -18,7 +19,7 @@ const Items = (props) => {
         {props.items &&
           props.items.map((item) => (
             <li key={item.id}>
-              <Link to={`accounts/${item.account_id}/items/${item.id}`}>
+              <Link to={`/accounts/${item.account_id}/items/${item.id}`}>
                 {item.name} - Price: ${item.price} {item.description}
               </Link>
               <button onClick={() => handleDelete(item)}>Delete</button>

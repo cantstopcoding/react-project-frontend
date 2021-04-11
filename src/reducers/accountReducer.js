@@ -1,6 +1,7 @@
 export default function accountReducer(
   state = {
     accounts: [],
+    item: {},
   },
   action
 ) {
@@ -9,6 +10,8 @@ export default function accountReducer(
       return { accounts: action.payload };
     case "ADD_ACCOUNT":
       return { ...state, accounts: [...state.accounts, action.payload] };
+    case "FETCH_ITEM":
+      return { ...state, items: [action.payload] };
     case "ADD_ITEM":
       let accounts = state.accounts.map((account) => {
         if (account.id === action.payload.id) {
@@ -35,7 +38,9 @@ export default function accountReducer(
           return account;
         }
       });
-      return { ...state, accounts: accountsThree };
+    case "EDIT_ITEM":
+      debugger
+      return {...state, item: action.payload}
     default:
       return state;
   }
