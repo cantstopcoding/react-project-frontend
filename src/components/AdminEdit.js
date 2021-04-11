@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { editAccount } from "../actions/editAccount";
+import { editAdmin } from "../actions/editAdmin";
 
-class AccountEdit extends React.Component {
+class AdminEdit extends React.Component {
   state = {
     name: "",
     balance: "",
@@ -16,8 +16,8 @@ class AccountEdit extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let account = { ...this.state, id: this.props.account.id };
-    this.props.editAccount(account);
+    let admin = { ...this.state, id: this.props.admin.id };
+    this.props.editAdmin(admin);
     this.setState({
       name: "",
       balance: "",
@@ -28,7 +28,7 @@ class AccountEdit extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Checking Account Name: </label>
+          <label>Checking Admin Name: </label>
           <input
             type="text"
             placeholder="Name"
@@ -37,7 +37,7 @@ class AccountEdit extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          <label>Checking Account Balance: </label>
+          <label>Checking Admin Balance: </label>
           <input
             type="text"
             placeholder="Balance"
@@ -53,4 +53,4 @@ class AccountEdit extends React.Component {
   }
 }
 
-export default connect(null, { editAccount })(AccountEdit);
+export default connect(null, { editAdmin })(AdminEdit);

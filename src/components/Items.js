@@ -9,7 +9,7 @@ const Items = (props) => {
 
   const handleDelete = (item) => {
     // debugger
-    props.deleteItem(item.id, item.account_id);
+    props.deleteItem(item.id, item.admin_id);
   };
 
   return (
@@ -19,7 +19,7 @@ const Items = (props) => {
         {props.items &&
           props.items.map((item) => (
             <li key={item.id}>
-              <Link to={`/accounts/${item.account_id}/items/${item.id}`}>
+              <Link to={`/admins/${item.admin_id}/items/${item.id}`}>
                 {item.name} - Price: ${item.price} {item.description}
               </Link>
               <button onClick={() => handleDelete(item)}>Delete</button>

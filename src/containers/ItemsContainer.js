@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAccounts } from "../actions/fetchAccounts";
+import { fetchAdmins } from "../actions/fetchAdmins";
 import { Switch, Route } from "react-router";
 import ItemInput from "../components/ItemInput";
 import Items from "../components/Items";
@@ -16,15 +16,15 @@ class ItemsContainer extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/accounts/:id">
+          <Route exact path="/admins/:id">
             <div>
-              <ItemInput account={this.props.account} />
-              <Items items={this.props.account && this.props.account.items} />
+              <ItemInput admin={this.props.admin} />
+              <Items items={this.props.admin && this.props.admin.items} />
             </div>
           </Route>
           <Route
             exact
-            path="/accounts/:id/items/:id"
+            path="/admins/:id/items/:id"
             render={(routerProps) => {
               return (
                 <div>
@@ -41,9 +41,9 @@ class ItemsContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.accountReducer);
+  console.log(state.adminReducer);
   return {
-    item: state.accountReducer.items,
+    item: state.adminReducer.items,
   };
 };
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addAccount } from "../actions/addAccount";
+import { addAdmin } from "../actions/addAdmin";
 
-class AccountInput extends React.Component {
+class AdminInput extends React.Component {
   state = {
     name: "",
     balance: "",
@@ -16,7 +16,7 @@ class AccountInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addAccount(this.state);
+    this.props.addAdmin(this.state);
     this.setState({
       name: "",
       balance: "",
@@ -27,7 +27,7 @@ class AccountInput extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Checking Account Name: </label>
+          <label>Checking Admin Name: </label>
           <input
             type="text"
             placeholder="Name"
@@ -36,7 +36,7 @@ class AccountInput extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          <label>Checking Account Balance: </label>
+          <label>Checking Admin Balance: </label>
           <input
             type="text"
             placeholder="Balance"
@@ -52,4 +52,4 @@ class AccountInput extends React.Component {
   }
 }
 
-export default connect(null, { addAccount })(AccountInput);
+export default connect(null, { addAdmin })(AdminInput);

@@ -1,6 +1,6 @@
-export const addItem = (item, accountId) => {
+export const addItem = (item, adminId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/accounts/${accountId}/items`, {
+    fetch(`http://localhost:3000/api/v1/admins/${adminId}/items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -8,12 +8,12 @@ export const addItem = (item, accountId) => {
       body: JSON.stringify(item),
     })
       .then((response) => response.json())
-      .then((account) => {
+      .then((admin) => {
         // debugger
-        if (account.error) {
-          alert(account.error);
+        if (admin.error) {
+          alert(admin.error);
         } else {
-          dispatch({ type: "ADD_ITEM", payload: account });
+          dispatch({ type: "ADD_ITEM", payload: admin });
         }
       });
   };

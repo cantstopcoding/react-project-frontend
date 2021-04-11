@@ -1,14 +1,14 @@
-export const addAccount = (data) => {
+export const editAdmin = (data) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/accounts", {
+    fetch(`http://localhost:3000/api/v1/admins/${data.id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      method: "POST",
+      method: "PATCH",
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((account) => dispatch({ type: "ADD_ACCOUNT", payload: account }));
+      .then((admin) => dispatch({ type: "EDIT_ADMIN", payload: admin }));
   };
 };

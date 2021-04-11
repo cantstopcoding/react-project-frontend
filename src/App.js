@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import AccountsContainer from "./containers/AccountsContainer";
+import AdminsContainer from "./containers/AdminsContainer";
 import ItemsContainer from "./containers/ItemsContainer";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <AccountsContainer />
+        <AdminsContainer />
         <ItemsContainer />
       </div>
     );
