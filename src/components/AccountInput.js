@@ -4,8 +4,10 @@ import { addAccount } from "../actions/addAccount";
 
 class AccountInput extends React.Component {
   state = {
-    name: "",
-    balance: "",
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
   };
 
   handleChange = (event) => {
@@ -18,8 +20,10 @@ class AccountInput extends React.Component {
     event.preventDefault();
     this.props.addAccount(this.state);
     this.setState({
-      name: "",
-      balance: "",
+      first_name: "",
+      last_name: "",
+      username: "",
+      email: "",
     });
   };
 
@@ -27,21 +31,39 @@ class AccountInput extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Checking Account Name: </label>
+          <label>First Name: </label>
           <input
             type="text"
-            placeholder="Name"
-            value={this.state.name}
-            name="name"
+            placeholder="First Name"
+            value={this.state.first_name}
+            name="first_name"
             onChange={this.handleChange}
           />
           <br />
-          <label>Checking Account Balance: </label>
+          <label>Last Name: </label>
           <input
             type="text"
-            placeholder="Balance"
-            value={this.state.balance}
-            name="balance"
+            placeholder="Last Name"
+            value={this.state.last_name}
+            name="last_name"
+            onChange={this.handleChange}
+          />
+          <br />
+          <label>Username: </label>
+          <input
+            type="text"
+            placeholder="Username"
+            value={this.state.username}
+            name="username"
+            onChange={this.handleChange}
+          />
+          <br />
+          <label>Email: </label>
+          <input
+            type="text"
+            placeholder="Email"
+            value={this.state.email}
+            name="email"
             onChange={this.handleChange}
           />
           <br />
