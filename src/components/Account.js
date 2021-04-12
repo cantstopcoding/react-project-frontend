@@ -14,7 +14,7 @@ const Account = (props) => {
   return (
     <div>
       <h2>
-        {account ? account.name : null} - {account ? account.balance : null}
+        {account ? account.first_name : null} {account ? account.last_name : null} - {account ? account.username : null}
       </h2>
       <ItemsContainer account={account} />
       <br />
