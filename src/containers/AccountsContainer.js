@@ -5,6 +5,7 @@ import { fetchAccounts } from "../actions/fetchAccounts";
 import AccountInput from "../components/AccountInput";
 import Accounts from "../components/Accounts";
 import Account from "../components/Account";
+import Navigation from "../components/Navigation";
 
 class AccountsContainer extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class AccountsContainer extends Component {
     console.log("ACCOUNT CONTAINER", this.props.accounts);
     return (
       <div>
+        <Navigation />
         <Switch>
           <Route exact path="/accounts/new" component={AccountInput} />
           <Route
