@@ -15,6 +15,7 @@ export const addItem = (item, accountId) => {
         } else {
           dispatch({ type: "ADD_ITEM", payload: account });
         }
-      });
+      })
+      .catch(console.log);
   };
 };
