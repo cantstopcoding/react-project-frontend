@@ -9,6 +9,13 @@ export const editAccount = (data) => {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((account) => dispatch({ type: "EDIT_ACCOUNT", payload: account }));
+      .then((account) => {
+        if (account.error) {
+          alert(account.error);
+        } else {
+          dispatch({ type: "EDIT_ACCOUNT", payload: account });
+        }
+      })
+      .catch(console.log);
   };
 };
