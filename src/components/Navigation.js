@@ -6,7 +6,7 @@ const Navigation = (props) => {
   return (
     <div>
       <Link to='/accounts' style={{paddingRight: '5px'}}>Accounts </Link>
-      <Link to='/accounts/new'> Add Account</Link>
+      <Link to='/accounts/new'> Create Account</Link>
     </div>
 
   )
