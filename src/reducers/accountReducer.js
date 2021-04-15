@@ -21,6 +21,8 @@ export default function accountReducer(
         }
       });
       return { ...state, accounts: accounts };
+    case "DELETE_ACCOUNT":
+      return { ...state, accounts: action.payload };
     case "DELETE_ITEM":
       let accountsTWO = state.accounts.map((account) => {
         if (account.id === action.payload.id) {
