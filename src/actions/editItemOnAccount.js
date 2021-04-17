@@ -1,12 +1,14 @@
-export const editItemOnAccount = (item, accountId) => {
+export const editItemOnAccount = (accountId, itemId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/accounts/${accountId}/items`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
+    fetch(
+      `http://localhost:3000/api/v1/accounts/${accountId}/items/${itemId}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((response) => response.json())
       .then((account) => {
         if (account.error) {
@@ -15,6 +17,6 @@ export const editItemOnAccount = (item, accountId) => {
           dispatch({ type: "EDIT_ITEM_ON_ACCOUNT", payload: account });
         }
       })
-      .catch(console.log);
+      .catch((err) => console.error("ERR", err));
   };
 };
