@@ -3,10 +3,12 @@ export const editItemOnAccount = (data) => {
     fetch(
       `http://localhost:3000/api/v1/accounts/${data.account_id}/items/${data.id}`,
       {
-        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
+        method: "PATCH",
+        body: JSON.stringify(data),
       }
     )
       .then((response) => response.json())
