@@ -23,10 +23,15 @@ const Items = (props) => {
               <Link to={`/accounts/${item.account_id}/items/${item.id}`}>
                 {item.name} - Price: ${item.price} {item.description}
               </Link>
-              <ItemEditOnAccount />
+              {/* pass props in component below */}
+              {/* which one?  */}
+              <ItemEditOnAccount item={item} />
               <button onClick={() => handleDelete(item)}>Delete</button>
+              <br />
+              <br />
             </li>
           ))}
+        <br />
       </div>
     </div>
   );
