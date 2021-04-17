@@ -1,7 +1,7 @@
-export const editItemOnAccount = (accountId, itemId) => {
+export const editItemOnAccount = (data) => {
   return (dispatch) => {
     fetch(
-      `http://localhost:3000/api/v1/accounts/${accountId}/items/${itemId}`,
+      `http://localhost:3000/api/v1/accounts/${data.account_id}/items/${data.id}`,
       {
         method: "PATCH",
         headers: {

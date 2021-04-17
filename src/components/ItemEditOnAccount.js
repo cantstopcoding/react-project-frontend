@@ -19,10 +19,17 @@ class ItemEditOnAccount extends React.Component {
     // debugger;
 
     // this.props.editItemOnAccount(account.id, item.id);
-    this.props.editItemOnAccount(
-      this.props.item.account_id,
-      this.props.item.id
-    );
+    // this.props.editItemOnAccount(
+    //   this.props.item.account_id,
+    //   this.props.item.id
+    // );
+    let item = {
+      ...this.state,
+      account_id: this.props.item.account_id,
+      id: this.props.item.id,
+    };
+    this.props.editItemOnAccount(item);
+    // let account = { ...this.state, id: this.props.account.id };
     this.setState({
       name: "",
       image_url: "",
@@ -64,13 +71,13 @@ class ItemEditOnAccount extends React.Component {
           />
           <br />
           <label>Price: </label>
-          {/* <input
+          <input
             type="text"
             placeholder="Price"
             value={this.state.price}
             name="price"
             onChange={this.handleChange}
-          /> */}
+          />
           <br />
           <input type="submit" />
         </form>
