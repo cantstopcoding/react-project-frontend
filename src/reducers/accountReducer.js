@@ -44,13 +44,14 @@ export default function accountReducer(
     case "EDIT_ITEM":
       return { ...state, item: action.payload };
     case "EDIT_ITEM_ON_ACCOUNT":
-      let accountsNine = state.accountsNine.map((account) => {
+      let accountsNine = state.accounts.map((account) => {
         if (account.id === action.payload.id) {
           return action.payload;
         } else {
           return account;
         }
       });
+
       return { ...state, accounts: accountsNine };
     default:
       return state;

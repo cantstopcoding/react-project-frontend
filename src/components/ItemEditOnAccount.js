@@ -5,10 +5,11 @@ import { editItemOnAccount } from "../actions/editItemOnAccount";
 class ItemEditOnAccount extends React.Component {
   state = {
     name: "",
-    image_url: "",
     description: "",
     price: "",
+    image_url: "",
   };
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -16,25 +17,18 @@ class ItemEditOnAccount extends React.Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    // debugger;
 
-    // this.props.editItemOnAccount(account.id, item.id);
-    // this.props.editItemOnAccount(
-    //   this.props.item.account_id,
-    //   this.props.item.id
-    // );
     let item = {
       ...this.state,
       account_id: this.props.item.account_id,
       id: this.props.item.id,
     };
     this.props.editItemOnAccount(item);
-    // let account = { ...this.state, id: this.props.account.id };
     this.setState({
       name: "",
-      image_url: "",
       description: "",
       price: "",
+      image_url: "",
     });
   };
 
