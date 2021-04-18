@@ -41,7 +41,7 @@ class ItemEditOnAccount extends React.Component {
           <input
             type="text"
             placeholder="Name"
-            value={this.state.first_name}
+            value={this.state.name}
             name="name"
             onChange={this.handleChange}
           />
@@ -50,7 +50,7 @@ class ItemEditOnAccount extends React.Component {
           <input
             type="text"
             placeholder="Image Url"
-            value={this.state.last_name}
+            value={this.state.image_url}
             name="image_url"
             onChange={this.handleChange}
           />
@@ -59,7 +59,7 @@ class ItemEditOnAccount extends React.Component {
           <input
             type="text"
             placeholder="Description"
-            value={this.state.username}
+            value={this.state.description}
             name="description"
             onChange={this.handleChange}
           />
