@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import accountReducer from "./reducers/accountReducer";
 import App from "./App";
 
@@ -18,6 +18,14 @@ let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+      <React.Fragment>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NoMatch} />
+        </Switch>
+      </React.Fragment>
       <App />
     </Router>
   </Provider>,
