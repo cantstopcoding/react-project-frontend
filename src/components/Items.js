@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Route, Link } from "react-router-dom";
 import { deleteItem } from "../actions/deleteItem";
 import Item from "../components/Item";
+import ItemEditOnAccount from "./ItemEditOnAccount";
 
 const Items = (props) => {
   console.log("ITEM", props.items);
@@ -22,9 +23,15 @@ const Items = (props) => {
               <Link to={`/accounts/${item.account_id}/items/${item.id}`}>
                 {item.name} - Price: ${item.price} {item.description}
               </Link>
+              {/* pass props in component below */}
+              {/* which one?  */}
+              <ItemEditOnAccount item={item} />
               <button onClick={() => handleDelete(item)}>Delete</button>
+              <br />
+              <br />
             </li>
           ))}
+        <br />
       </div>
     </div>
   );
