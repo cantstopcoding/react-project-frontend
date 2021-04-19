@@ -7,6 +7,7 @@ import { Home } from "./components/Home";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { NoMatch } from "./components/NoMatch";
+import { Layout } from "./components/Layouts";
 
 class App extends React.Component {
   render() {
@@ -15,12 +16,14 @@ class App extends React.Component {
         <AccountsContainer />
         <ItemsContainer />
         <React.Fragment>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route component={NoMatch} />
-          </Switch>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Layout>
         </React.Fragment>
       </div>
     );
