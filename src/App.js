@@ -8,6 +8,7 @@ import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { NoMatch } from "./components/NoMatch";
 import { Layout } from "./components/Layouts";
+import { Jumbotron } from "./components/Jumbotron";
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
       <div className="App">
         <AccountsContainer />
         <ItemsContainer />
+        <Jumbotron />
         <React.Fragment>
           <Layout>
             <Switch>
