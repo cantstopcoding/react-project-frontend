@@ -5,6 +5,14 @@ import { fetchAccounts } from "../actions/fetchAccounts";
 import AccountInput from "../components/AccountInput";
 import Accounts from "../components/Accounts";
 import Account from "../components/Account";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "../components/Home";
+import { About } from "../components/About";
+import { Contact } from "../components/Contact";
+import { NoMatch } from "../components/NoMatch";
+import { Layout } from "../components/Layouts";
+import { Jumbotron } from "../components/Jumbotron";
+import Navigation from "../components/Navigation";
 
 class AccountsContainer extends Component {
   componentDidMount() {
@@ -15,23 +23,31 @@ class AccountsContainer extends Component {
     console.log("ACCOUNT CONTAINER", this.props.accounts);
     return (
       <div>
-        <Switch>
-          <Route exact path="/accounts/new" component={AccountInput} />
-          <Route
-            exact
-            path="/accounts/:id"
-            render={(routerProps) => (
-              <Account {...routerProps} accounts={this.props.accounts} />
-            )}
-          />
-          <Route
-            exact
-            path="/accounts"
-            render={(routerProps) => (
-              <Accounts {...routerProps} accounts={this.props.accounts} />
-            )}
-          />
-        </Switch>
+        <React.Fragment>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route exact path="/accounts/new" component={AccountInput} />
+              <Route
+                exact
+                path="/accounts/:id"
+                render={(routerProps) => (
+                  <Account {...routerProps} accounts={this.props.accounts} />
+                )}
+              />
+              <Route
+                exact
+                path="/accounts"
+                render={(routerProps) => (
+                  <Accounts {...routerProps} accounts={this.props.accounts} />
+                )}
+              />
+              <Route component={NoMatch} />
+            </Switch>
+          </Layout>
+        </React.Fragment>
       </div>
     );
   }
