@@ -22,7 +22,7 @@ const Items = (props) => {
           {props.items &&
             props.items.map((item) => (
               <div key={item.id}>
-                <Card style={{ width: "18rem" }}>
+                <Card style={({ width: "18rem" }, { flex: 1 })}>
                   <Card.Img variant="top" src={item.image_url} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
