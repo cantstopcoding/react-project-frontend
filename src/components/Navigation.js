@@ -26,20 +26,26 @@ const Navigation = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Item>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
-            </Nav.Item>
+            <Link to="/" style={{ paddingRight: "10px" }}>
+              Home
+            </Link>
+
+            <Link to="/about" style={{ paddingRight: "10px" }}>
+              About
+            </Link>
+
+            <Link to="/contact" style={{ paddingRight: "10px" }}>
+              Contact
+            </Link>
+
+            <Link to="/accounts" style={{ paddingRight: "10px" }}>
+              Accounts{" "}
+            </Link>
+            <Link to="/accounts/new"> Create Account</Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <div>
-        <Link to="/accounts" style={{ paddingRight: "5px" }}>
-          Accounts{" "}
-        </Link>
-        <Link to="/accounts/new"> Create Account</Link>
-      </div>
+      <div></div>
     </Styles>
   );
 };
