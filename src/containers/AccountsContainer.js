@@ -11,8 +11,6 @@ import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { NoMatch } from "../components/NoMatch";
 import { Layout } from "../components/Layouts";
-import { Jumbotron } from "../components/Jumbotron";
-import Navigation from "../components/Navigation";
 
 class AccountsContainer extends Component {
   componentDidMount() {
