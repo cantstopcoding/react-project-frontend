@@ -9,14 +9,16 @@ import { Contact } from "./components/Contact";
 import { NoMatch } from "./components/NoMatch";
 import { Layout } from "./components/Layouts";
 import { Jumbotron } from "./components/Jumbotron";
+import Navigation from "./components/Navigation";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Navigation />
+        <Jumbotron />
         <AccountsContainer />
         <ItemsContainer />
-        <Jumbotron />
         <React.Fragment>
           <Layout>
             <Switch>
