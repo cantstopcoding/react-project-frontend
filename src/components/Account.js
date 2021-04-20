@@ -14,12 +14,13 @@ const Account = (props) => {
   return (
     <div>
       <h2>
-        {account ? account.first_name : null} {account ? account.last_name : null} - {account ? account.username : null}
+        {account ? account.first_name : null}{" "}
+        {account ? account.last_name : null} -{" "}
+        {account ? account.username : null}
       </h2>
-      <ItemsContainer account={account} />
-      <br />
-      <h3>Edit Account:</h3>
       <AccountEdit account={account} />
+      <br />
+      <ItemsContainer account={account} />
     </div>
   );
 };
