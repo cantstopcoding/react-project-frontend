@@ -4,6 +4,7 @@ import { Route, Link } from "react-router-dom";
 import { deleteItem } from "../actions/deleteItem";
 import Item from "../components/Item";
 import ItemEditOnAccount from "./ItemEditOnAccount";
+import { Card, Button, CardDeck } from "react-bootstrap";
 
 const Items = (props) => {
   console.log("ITEM", props.items);
@@ -17,21 +18,27 @@ const Items = (props) => {
     <div>
       <h2>My Items:</h2>
       <div>
-        {props.items &&
-          props.items.map((item) => (
-            <li key={item.id}>
-              <Link to={`/accounts/${item.account_id}/items/${item.id}`}>
-                {item.name} - Price: ${item.price} {item.description}
-              </Link>
-              {/* pass props in component below */}
-              {/* which one?  */}
-              <ItemEditOnAccount item={item} />
-              <button onClick={() => handleDelete(item)}>Delete</button>
-              <br />
-              <br />
-            </li>
-          ))}
-        <br />
+        <CardDeck style={{ display: "flex", flexDirection: "row" }}>
+          {props.items &&
+            props.items.map((item) => (
+              <div key={item.id}>
+                <Card style={{ width: "21.5rem", height: "97.5%" }}>
+                  <Card.Img variant="top" src={item.image_url} />
+                  <Card.Body>
+                    <Card.Title>{item.name}</Card.Title>
+                    <Card.Text>
+                      Price: ${item.price}
+                      <br />
+                      Description: {item.description}
+                      <br />
+                      <button onClick={() => handleDelete(item)}>Delete</button>
+                      <ItemEditOnAccount item={item} />
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
+        </CardDeck>
       </div>
     </div>
   );
