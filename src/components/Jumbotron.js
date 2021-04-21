@@ -31,7 +31,6 @@ export const Jumbotron = () => (
       <div className="overlay"></div>
       <Container>
         <h1>Caroline DAmbrosio Designs</h1>
-        <p>I make dresses!</p>
       </Container>
     </Jumbo>
   </Styles>
