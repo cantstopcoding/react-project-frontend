@@ -30,8 +30,9 @@ const Items = (props) => {
                       Price: ${item.price}
                       <br />
                       Description: {item.description}
-                      <ItemEditOnAccount item={item} />
+                      <br />
                       <button onClick={() => handleDelete(item)}>Delete</button>
+                      <ItemEditOnAccount item={item} />
                     </Card.Text>
                   </Card.Body>
                 </Card>
