@@ -26,14 +26,12 @@ const Items = (props) => {
                   <Card.Img variant="top" src={item.image_url} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                      Price: ${item.price}
-                      <br />
-                      Description: {item.description}
-                      <br />
-                      <button onClick={() => handleDelete(item)}>Delete</button>
-                      <ItemEditOnAccount item={item} />
-                    </Card.Text>
+                    Price: ${item.price}
+                    <br />
+                    Description: {item.description}
+                    <br />
+                    <button onClick={() => handleDelete(item)}>Delete</button>
+                    <ItemEditOnAccount item={item} />
                   </Card.Body>
                 </Card>
               </div>
