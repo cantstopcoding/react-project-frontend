@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addAccount } from "../actions/addAccount";
 
-class AccountInput extends React.Component {
+class AccountInput extends Component {
   state = {
     first_name: "",
     last_name: "",

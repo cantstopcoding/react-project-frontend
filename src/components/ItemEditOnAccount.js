@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { editItemOnAccount } from "../actions/editItemOnAccount";
 import { Accordion, Card, Button } from "react-bootstrap";
 
-class ItemEditOnAccount extends React.Component {
+class ItemEditOnAccount extends Component {
   state = {
     name: "",
     description: "",

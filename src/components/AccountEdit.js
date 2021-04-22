@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { editAccount } from "../actions/editAccount";
 import { Accordion, Card, Button } from "react-bootstrap";
 
-class AccountEdit extends React.Component {
+class AccountEdit extends Component {
   state = {
     first_name: "",
     last_name: "",
