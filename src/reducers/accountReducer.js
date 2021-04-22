@@ -1,10 +1,10 @@
-export default function accountReducer(
+const accountReducer = (
   state = {
     accounts: [],
     item: {},
   },
   action
-) {
+) => {
   switch (action.type) {
     case "FETCH_ACCOUNTS":
       return { accounts: action.payload };
@@ -56,4 +56,6 @@ export default function accountReducer(
     default:
       return state;
   }
-}
+};
+
+export default accountReducer;
