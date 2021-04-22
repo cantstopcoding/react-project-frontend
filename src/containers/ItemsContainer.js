@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAccounts } from "../actions/fetchAccounts";
 import { Switch, Route } from "react-router";
 import ItemInput from "../components/ItemInput";
 import Items from "../components/Items";

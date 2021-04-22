@@ -1,10 +1,8 @@
 import React from "react-redux";
 import { connect } from "react-redux";
-import { Route, Link } from "react-router-dom";
 import { deleteItem } from "../actions/deleteItem";
-import Item from "../components/Item";
 import ItemEditOnAccount from "./ItemEditOnAccount";
-import { Card, Button, CardDeck } from "react-bootstrap";
+import { Card, CardDeck } from "react-bootstrap";
 
 const Items = (props) => {
   console.log("ITEM", props.items);

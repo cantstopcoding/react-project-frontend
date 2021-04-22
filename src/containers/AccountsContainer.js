@@ -5,7 +5,6 @@ import { fetchAccounts } from "../actions/fetchAccounts";
 import AccountInput from "../components/AccountInput";
 import Accounts from "../components/Accounts";
 import Account from "../components/Account";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "../components/Home";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";

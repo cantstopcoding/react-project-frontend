@@ -1,27 +1,15 @@
 import React from "react";
-import { connect } from "react-redux";
 import { editItem } from "../actions/editItem";
-
 
 const Item = (props) => {
   console.log("hiii", props);
 
   const handleEdit = () => {
-    editItem({id: "1", name: "new name"})
+    editItem({ id: "1", name: "new name" });
   };
 
   console.log(props.item);
   return (
-    // <div>
-    //   {(
-    //     props.item.length > 0 ? <div><div>{props.item.item}</div>
-    //     <button onClick={handleEdit}>Click me to edit item</button>
-    //   </div>
-    //   )
-    //    : null
-    //   }
-    //   </div>
-
     <div>
       {props.item.item ? (
         <div>
@@ -35,4 +23,3 @@ const Item = (props) => {
 };
 
 export default Item;
-// export default connect(null, fetchItem)(Item);

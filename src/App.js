@@ -1,8 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import AccountsContainer from "./containers/AccountsContainer";
-import ItemsContainer from "./containers/ItemsContainer";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Jumbotron } from "./components/Jumbotron";
 import Navigation from "./components/Navigation";
 
