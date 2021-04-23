@@ -15,6 +15,6 @@ export const addItem = (item, accountId) => {
           dispatch({ type: "ADD_ITEM", payload: account });
         }
       })
-      .catch(console.log);
+      .catch((err) => console.error("ERR", err));
   };
 };

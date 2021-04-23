@@ -9,6 +9,7 @@ export const editItem = (data) => {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((item) => dispatch({ type: "EDIT_ITEM", payload: item }));
+      .then((item) => dispatch({ type: "EDIT_ITEM", payload: item }))
+      .catch((err) => console.error("ERR", err));
   };
 };

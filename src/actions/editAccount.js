@@ -16,6 +16,6 @@ export const editAccount = (data) => {
           dispatch({ type: "EDIT_ACCOUNT", payload: account });
         }
       })
-      .catch(console.log);
+      .catch((err) => console.error("ERR", err));
   };
 };
