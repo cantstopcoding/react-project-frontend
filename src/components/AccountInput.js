@@ -4,8 +4,8 @@ import { addAccount } from "../actions/addAccount";
 
 class AccountInput extends Component {
   state = {
-    first_name: "",
-    last_name: "",
+    firstName: "",
+    lastName: "",
     username: "",
     email: "",
   };
@@ -20,8 +20,8 @@ class AccountInput extends Component {
     event.preventDefault();
     this.props.addAccount(this.state);
     this.setState({
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       username: "",
       email: "",
     });
@@ -35,8 +35,8 @@ class AccountInput extends Component {
           <input
             type="text"
             placeholder="First Name"
-            value={this.state.first_name}
-            name="first_name"
+            value={this.state.firstName}
+            name="firstName"
             onChange={this.handleChange}
           />
           <br />
@@ -44,8 +44,8 @@ class AccountInput extends Component {
           <input
             type="text"
             placeholder="Last Name"
-            value={this.state.last_name}
-            name="last_name"
+            value={this.state.lastName}
+            name="lastName"
             onChange={this.handleChange}
           />
           <br />

@@ -1,4 +1,11 @@
 export const addAccount = (data) => {
+  const accountData = {
+    first_name: data.firstName,
+    last_name: data.lastName,
+    username: data.username,
+    email: data.email,
+  };
+
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/accounts", {
       headers: {
@@ -6,7 +13,7 @@ export const addAccount = (data) => {
         Accept: "application/json",
       },
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(accountData),
     })
       .then((response) => response.json())
       .then((account) => {
