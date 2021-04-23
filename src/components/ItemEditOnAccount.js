@@ -8,7 +8,7 @@ class ItemEditOnAccount extends Component {
     name: "",
     description: "",
     price: "",
-    image_url: "",
+    imageUrl: "",
   };
 
   handleChange = (event) => {
@@ -29,7 +29,7 @@ class ItemEditOnAccount extends Component {
       name: "",
       description: "",
       price: "",
-      image_url: "",
+      imageUrl: "",
     });
   };
 
@@ -60,8 +60,8 @@ class ItemEditOnAccount extends Component {
                   <input
                     type="text"
                     placeholder="Image Url"
-                    value={this.state.image_url}
-                    name="image_url"
+                    value={this.state.imageUrl}
+                    name="imageUrl"
                     onChange={this.handleChange}
                   />
                   <br />

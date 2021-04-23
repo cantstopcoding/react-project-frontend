@@ -1,4 +1,11 @@
 export const editItemOnAccount = (data) => {
+  const itemData = {
+    name: data.name,
+    description: data.description,
+    price: data.price,
+    image_url: data.imageUrl,
+  };
+
   return (dispatch) => {
     fetch(
       `http://localhost:3000/api/v1/accounts/${data.account_id}/items/${data.id}`,
@@ -8,7 +15,7 @@ export const editItemOnAccount = (data) => {
           Accept: "application/json",
         },
         method: "PATCH",
-        body: JSON.stringify(data),
+        body: JSON.stringify(itemData),
       }
     )
       .then((response) => response.json())

@@ -8,7 +8,7 @@ class ItemInput extends Component {
     name: "",
     description: "",
     price: "",
-    image_url: "",
+    imageUrl: "",
   };
 
   handleChange = (event) => {
@@ -24,7 +24,7 @@ class ItemInput extends Component {
       name: "",
       description: "",
       price: "",
-      image_url: "",
+      imageUrl: "",
     });
   };
 
@@ -72,8 +72,8 @@ class ItemInput extends Component {
                   <br />
                   <input
                     type="text"
-                    name="image_url"
-                    value={this.state.image_url}
+                    name="imageUrl"
+                    value={this.state.imageUrl}
                     onChange={this.handleChange}
                   />
                   <br />
