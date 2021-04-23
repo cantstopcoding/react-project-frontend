@@ -5,8 +5,8 @@ import { Accordion, Card, Button } from "react-bootstrap";
 
 class AccountEdit extends Component {
   state = {
-    first_name: "",
-    last_name: "",
+    firstName: "",
+    lastName: "",
     username: "",
     email: "",
   };
@@ -22,8 +22,8 @@ class AccountEdit extends Component {
     let account = { ...this.state, id: this.props.account.id };
     this.props.editAccount(account);
     this.setState({
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       username: "",
       email: "",
     });
@@ -46,8 +46,8 @@ class AccountEdit extends Component {
                   <input
                     type="text"
                     placeholder="First Name"
-                    value={this.state.first_name}
-                    name="first_name"
+                    value={this.state.firstName}
+                    name="firstName"
                     onChange={this.handleChange}
                   />
                   <br />
@@ -55,8 +55,8 @@ class AccountEdit extends Component {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    value={this.state.last_name}
-                    name="last_name"
+                    value={this.state.lastName}
+                    name="lastName"
                     onChange={this.handleChange}
                   />
                   <br />

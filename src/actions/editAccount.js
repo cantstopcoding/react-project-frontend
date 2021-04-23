@@ -1,4 +1,11 @@
 export const editAccount = (data) => {
+  const accountData = {
+    first_name: data.firstName,
+    last_name: data.lastName,
+    username: data.username,
+    email: data.email,
+  };
+
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/accounts/${data.id}`, {
       headers: {
@@ -6,7 +13,7 @@ export const editAccount = (data) => {
         Accept: "application/json",
       },
       method: "PATCH",
-      body: JSON.stringify(data),
+      body: JSON.stringify(accountData),
     })
       .then((response) => response.json())
       .then((account) => {
