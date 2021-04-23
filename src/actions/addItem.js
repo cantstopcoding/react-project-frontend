@@ -9,7 +9,6 @@ export const addItem = (item, accountId) => {
     })
       .then((response) => response.json())
       .then((account) => {
-        // debugger
         if (account.error) {
           alert(account.error);
         } else {

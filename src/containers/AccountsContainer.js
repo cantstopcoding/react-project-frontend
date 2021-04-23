@@ -17,7 +17,6 @@ class AccountsContainer extends Component {
   }
 
   render() {
-    console.log("ACCOUNT CONTAINER", this.props.accounts);
     return (
       <div>
         <React.Fragment>
