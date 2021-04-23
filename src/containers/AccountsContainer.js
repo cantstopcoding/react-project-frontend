@@ -5,11 +5,11 @@ import { fetchAccounts } from "../actions/fetchAccounts";
 import AccountInput from "../components/AccountInput";
 import Accounts from "../components/Accounts";
 import Account from "../components/Account";
-import { Home } from "../components/Home";
-import { About } from "../components/About";
-import { Contact } from "../components/Contact";
-import { NoMatch } from "../components/NoMatch";
-import { Layout } from "../components/Layouts";
+import Home from "../components/Home";
+import About from "../components/About";
+import Contact from "../components/Contact";
+import NoMatch from "../components/NoMatch";
+import Layout from "../components/Layouts";
 
 class AccountsContainer extends Component {
   componentDidMount() {
