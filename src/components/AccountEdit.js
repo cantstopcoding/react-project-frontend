@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { editAccount } from "../actions/editAccount";
 import { Accordion, Card, Button } from "react-bootstrap";
 import AccountForm from "./AccountForm";
 
@@ -25,4 +23,4 @@ const AccountEdit = (props) => {
   );
 };
 
-export default connect(null, { editAccount })(AccountEdit);
+export default AccountEdit;
