@@ -1,7 +1,4 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addItem } from "../actions/addItem";
-import { Accordion, Card, Button } from "react-bootstrap";
+import React from "react";
 import ItemForm from "./ItemForm";
 
 const ItemInput = (props) => {
@@ -13,4 +10,4 @@ const ItemInput = (props) => {
   );
 };
 
-export default connect(null, { addItem })(ItemInput);
+export default ItemInput;
