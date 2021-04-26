@@ -13,9 +13,8 @@ const Account = (props) => {
   return (
     <div>
       <h2>
-        {account ? account.first_name : null}{" "}
-        {account ? account.last_name : null} -{" "}
-        {account ? account.username : null}
+        {account ? account.firstName : null} {account ? account.lastName : null}{" "}
+        - {account ? account.username : null}
       </h2>
       <AccountEdit account={account} />
       <br />
