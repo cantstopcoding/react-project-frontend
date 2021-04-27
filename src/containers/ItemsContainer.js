@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Switch, Route } from "react-router";
 import ItemInput from "../components/ItemInput";
 import Items from "../components/Items";
-import Item from "../components/Item";
 import { fetchItem } from "../actions/fetchItem";
 
 class ItemsContainer extends Component {
@@ -21,18 +20,6 @@ class ItemsContainer extends Component {
               <Items items={this.props.account && this.props.account.items} />
             </div>
           </Route>
-          <Route
-            exact
-            path="/accounts/:id/items/:id"
-            render={(routerProps) => {
-              return (
-                <div>
-                  hiiiii
-                  <Item {...routerProps} item={this.props} />
-                </div>
-              );
-            }}
-          />
         </Switch>
       </div>
     );
