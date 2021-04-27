@@ -6,3 +6,12 @@ export const accountData = (data) => {
     email: data.email,
   };
 };
+
+export const itemData = (data) => {
+  return {
+    name: data.name,
+    description: data.description,
+    price: data.price,
+    image_url: data.imageUrl,
+  };
+};
