@@ -9,7 +9,7 @@ const Items = (props) => {
 
   const handleDelete = (item) => {
     // debugger
-    props.deleteItem(item.id, item.account_id);
+    props.deleteItem(item.id, item.accountId);
   };
 
   return (
@@ -21,7 +21,7 @@ const Items = (props) => {
             props.items.map((item) => (
               <div key={item.id}>
                 <Card style={{ width: "21.5rem", height: "97.5%" }}>
-                  <Card.Img variant="top" src={item.image_url} />
+                  <Card.Img variant="top" src={item.imageUrl} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     Price: ${item.price}

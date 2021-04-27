@@ -5,14 +5,7 @@ export function fetchAccounts() {
       .then((accounts) =>
         dispatch({
           type: "FETCH_ACCOUNTS",
-          payload: accounts.map((account) => ({
-            id: account.id,
-            firstName: account.first_name,
-            lastName: account.last_name,
-            email: account.email,
-            items: account.items,
-            username: account.username,
-          })),
+          payload: accounts,
         })
       )
       .catch((err) => console.error("ERR", err));
