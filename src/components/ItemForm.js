@@ -26,7 +26,7 @@ class ItemForm extends Component {
     } else {
       let item = {
         ...this.state,
-        account_id: this.props.item.accountId,
+        accountId: this.props.item.accountId,
         id: this.props.item.id,
       };
       this.props.editItemOnAccount(item);
