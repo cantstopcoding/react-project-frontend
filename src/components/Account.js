@@ -13,14 +13,18 @@ const Account = (props) => {
 
   return (
     <div>
-      <h2>
-        {account ? account.firstName : <Route component={NoMatch} />}{" "}
-        {account ? account.lastName : null} -{" "}
-        {account ? account.username : null}
-      </h2>
-      {account ? <AccountEdit account={account} /> : null}
-      <br />
-      {account ? <ItemsContainer account={account} /> : null}
+      {account ? (
+        <div>
+          <h2>
+            {account.firstName}
+            {account.lastName} - {account.username}
+          </h2>
+          <AccountEdit account={account} />
+          <ItemsContainer account={account} />
+        </div>
+      ) : (
+        <Route component={NoMatch} />
+      )}
     </div>
   );
 };
