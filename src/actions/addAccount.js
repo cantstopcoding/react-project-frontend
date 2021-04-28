@@ -1,7 +1,4 @@
-import {
-  accountData,
-  postOrPatch,
-} from "../actionExtractions/actionExtractions";
+import { accountData, postOrPatch } from "../actionExtractions/extractions";
 
 export const addAccount = (data) => {
   return (dispatch) => {

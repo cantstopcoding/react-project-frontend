@@ -1,4 +1,4 @@
-import { itemData, postOrPatch } from "../actionExtractions/actionExtractions";
+import { itemData, postOrPatch } from "../actionExtractions/extractions";
 
 export const editItemOnAccount = (data) => {
   return (dispatch) => {
