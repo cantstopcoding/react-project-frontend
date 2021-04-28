@@ -1,8 +1,14 @@
-import { accountData, post } from "../actionExtractions/actionExtractions";
+import {
+  accountData,
+  postOrPatch,
+} from "../actionExtractions/actionExtractions";
 
 export const addAccount = (data) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/accounts", post(accountData(data)))
+    fetch(
+      "http://localhost:3000/api/v1/accounts",
+      postOrPatch(accountData(data), "POST")
+    )
       .then((response) => response.json())
       .then((account) => {
         if (account.error) {

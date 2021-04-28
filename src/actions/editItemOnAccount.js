@@ -1,10 +1,10 @@
-import { itemData, patch } from "../actionExtractions/actionExtractions";
+import { itemData, postOrPatch } from "../actionExtractions/actionExtractions";
 
 export const editItemOnAccount = (data) => {
   return (dispatch) => {
     fetch(
       `http://localhost:3000/api/v1/accounts/${data.accountId}/items/${data.id}`,
-      patch(itemData(data))
+      postOrPatch(itemData(data), "PATCH")
     )
       .then((response) => response.json())
       .then((account) => {

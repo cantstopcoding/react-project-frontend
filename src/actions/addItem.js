@@ -1,10 +1,10 @@
-import { itemData, post } from "../actionExtractions/actionExtractions";
+import { itemData, postOrPatch } from "../actionExtractions/actionExtractions";
 
 export const addItem = (item, accountId) => {
   return (dispatch) => {
     fetch(
       `http://localhost:3000/api/v1/accounts/${accountId}/items`,
-      post(itemData(item))
+      postOrPatch(itemData(item), "POST")
     )
       .then((response) => response.json())
       .then((account) => {

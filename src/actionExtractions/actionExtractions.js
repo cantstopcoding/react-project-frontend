@@ -16,24 +16,13 @@ export const itemData = (data) => {
   };
 };
 
-export const post = (data) => {
+export const postOrPatch = (data, method) => {
   return {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    method: "POST",
-    body: JSON.stringify(data),
-  };
-};
-
-export const patch = (data) => {
-  return {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    method: "PATCH",
+    method: method,
     body: JSON.stringify(data),
   };
 };
