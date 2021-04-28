@@ -1,15 +1,9 @@
 import { accountData } from "../actionExtractions/actionExtractions";
+import { post } from "../actionExtractions/actionExtractions";
 
 export const addAccount = (data) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/accounts", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(accountData(data)),
-    })
+    fetch("http://localhost:3000/api/v1/accounts", post(accountData(data)))
       .then((response) => response.json())
       .then((account) => {
         if (account.error) {

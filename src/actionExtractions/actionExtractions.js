@@ -15,3 +15,14 @@ export const itemData = (data) => {
     image_url: data.imageUrl,
   };
 };
+
+export const post = (data) => {
+  return {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(data),
+  };
+};
