@@ -1,7 +1,6 @@
 const accountReducer = (
   state = {
     accounts: [],
-    item: {},
   },
   action
 ) => {
