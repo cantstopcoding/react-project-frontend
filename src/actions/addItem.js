@@ -1,21 +1,19 @@
+import { itemData, postOrPatch } from "../actionExtractions/extractions";
+
 export const addItem = (item, accountId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/accounts/${accountId}/items`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
+    fetch(
+      `http://localhost:3000/api/v1/accounts/${accountId}/items`,
+      postOrPatch(itemData(item), "POST")
+    )
       .then((response) => response.json())
       .then((account) => {
-        // debugger
         if (account.error) {
           alert(account.error);
         } else {
           dispatch({ type: "ADD_ITEM", payload: account });
         }
       })
-      .catch(console.log);
+      .catch((err) => console.error("ERR", err));
   };
 };

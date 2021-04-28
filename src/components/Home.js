@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Home = () => (
+const Home = () => (
   <div>
     <h2>
       <Link to="/accounts" style={{ paddingRight: "10px" }}>
@@ -13,3 +13,5 @@ export const Home = () => (
     </h2>
   </div>
 );
+
+export default Home;

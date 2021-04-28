@@ -1,11 +1,11 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import AccountEdit from "./AccountEdit";
+import { Route } from "react-router-dom";
+import NoMatch from "../components/NoMatch";
 
 import ItemsContainer from "../containers/ItemsContainer";
 
 const Account = (props) => {
-  // let account = props.accounts[props.match.params.id - 1]
   let account = props.accounts.filter(
     // match.params.id is a string, not a number!!!
     (account) => `${account.id}` == props.match.params.id
@@ -13,14 +13,17 @@ const Account = (props) => {
 
   return (
     <div>
-      <h2>
-        {account ? account.first_name : null}{" "}
-        {account ? account.last_name : null} -{" "}
-        {account ? account.username : null}
-      </h2>
-      <AccountEdit account={account} />
-      <br />
-      <ItemsContainer account={account} />
+      {account ? (
+        <div>
+          <h2>
+            {account.firstName} {account.lastName} - {account.username}
+          </h2>
+          <AccountEdit account={account} />
+          <ItemsContainer account={account} />
+        </div>
+      ) : (
+        <Route component={NoMatch} />
+      )}
     </div>
   );
 };

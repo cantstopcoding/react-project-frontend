@@ -1,17 +1,15 @@
 import React from "react-redux";
 import { connect } from "react-redux";
-import { Route, Link } from "react-router-dom";
 import { deleteItem } from "../actions/deleteItem";
-import Item from "../components/Item";
 import ItemEditOnAccount from "./ItemEditOnAccount";
-import { Card, Button, CardDeck } from "react-bootstrap";
+import { Card, CardDeck } from "react-bootstrap";
 
 const Items = (props) => {
   console.log("ITEM", props.items);
 
   const handleDelete = (item) => {
     // debugger
-    props.deleteItem(item.id, item.account_id);
+    props.deleteItem(item.id, item.accountId);
   };
 
   return (
@@ -23,7 +21,7 @@ const Items = (props) => {
             props.items.map((item) => (
               <div key={item.id}>
                 <Card style={{ width: "21.5rem", height: "97.5%" }}>
-                  <Card.Img variant="top" src={item.image_url} />
+                  <Card.Img variant="top" src={item.imageUrl} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     Price: ${item.price}

@@ -4,8 +4,8 @@ export const deleteAccount = (accountId) => {
       method: "DELETE",
     })
       .then((response) => response.json())
-      .then(
-        (accounts) => dispatch({ type: "DELETE_ACCOUNT", payload: accounts }) //accounts are array of accounts
+      .then((accounts) =>
+        dispatch({ type: "DELETE_ACCOUNT", payload: accounts })
       )
       .catch((err) => console.error("ERR", err));
   };

@@ -7,6 +7,7 @@ export const deleteItem = (itemId, accountId) => {
       }
     )
       .then((response) => response.json())
-      .then((account) => dispatch({ type: "DELETE_ITEM", payload: account }));
+      .then((account) => dispatch({ type: "DELETE_ITEM", payload: account }))
+      .catch((err) => console.error("ERR", err));
   };
 };

@@ -1,7 +1,9 @@
 import React from "react";
 
-export const NoMatch = () => (
+const NoMatch = () => (
   <div>
     <p>No Match</p>
   </div>
 );
+
+export default NoMatch;

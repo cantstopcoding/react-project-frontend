@@ -1,13 +1,11 @@
+import { accountData, postOrPatch } from "../actionExtractions/extractions";
+
 export const addAccount = (data) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/accounts", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(data),
-    })
+    fetch(
+      "http://localhost:3000/api/v1/accounts",
+      postOrPatch(accountData(data), "POST")
+    )
       .then((response) => response.json())
       .then((account) => {
         if (account.error) {
@@ -16,6 +14,6 @@ export const addAccount = (data) => {
           dispatch({ type: "ADD_ACCOUNT", payload: account });
         }
       })
-      .catch(console.log);
+      .catch((err) => console.error("ERR", err));
   };
 };
