@@ -16,8 +16,7 @@ const Account = (props) => {
       {account ? (
         <div>
           <h2>
-            {account.firstName}
-            {account.lastName} - {account.username}
+            {account.firstName} {account.lastName} - {account.username}
           </h2>
           <AccountEdit account={account} />
           <ItemsContainer account={account} />
