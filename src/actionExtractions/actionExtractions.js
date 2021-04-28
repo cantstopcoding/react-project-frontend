@@ -26,3 +26,14 @@ export const post = (data) => {
     body: JSON.stringify(data),
   };
 };
+
+export const patch = (data) => {
+  return {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    method: "PATCH",
+    body: JSON.stringify(data),
+  };
+};

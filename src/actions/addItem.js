@@ -1,5 +1,4 @@
-import { itemData } from "../actionExtractions/actionExtractions";
-import { post } from "../actionExtractions/actionExtractions";
+import { itemData, post } from "../actionExtractions/actionExtractions";
 
 export const addItem = (item, accountId) => {
   return (dispatch) => {

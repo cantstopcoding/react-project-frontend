@@ -1,15 +1,11 @@
-import { accountData } from "../actionExtractions/actionExtractions";
+import { accountData, patch } from "../actionExtractions/actionExtractions";
 
 export const editAccount = (data) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/accounts/${data.id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      method: "PATCH",
-      body: JSON.stringify(accountData(data)),
-    })
+    fetch(
+      `http://localhost:3000/api/v1/accounts/${data.id}`,
+      patch(accountData(data))
+    )
       .then((response) => response.json())
       .then((account) => {
         if (account.error) {
