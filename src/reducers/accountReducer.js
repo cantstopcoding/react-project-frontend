@@ -1,3 +1,8 @@
+// function dispatch(action) {
+//   state = accountReducer(state, action)
+//   render()
+// }
+
 const accountReducer = (
   state = {
     accounts: [],
@@ -20,6 +25,8 @@ const accountReducer = (
     case "FETCH_ITEM":
       return { ...state, items: [action.payload] };
     case "ADD_ACCOUNT":
+      // spread opperator video 6 1:06:19
+      debugger;
       return { ...state, accounts: [...state.accounts, action.payload] };
     case "ADD_ITEM":
       return payload;

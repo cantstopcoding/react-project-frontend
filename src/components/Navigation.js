@@ -22,7 +22,9 @@ const Navigation = (props) => {
   return (
     <Styles>
       <Navbar expand="lg">
-        <Navbar.Brand href="/">Caroline DAmbrosio Designs</Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand>Caroline DAmbrosio Designs</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
