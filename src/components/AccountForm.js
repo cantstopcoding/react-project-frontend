@@ -4,12 +4,15 @@ import { addAccount } from "../actions/addAccount";
 import { editAccount } from "../actions/editAccount";
 
 class AccountForm extends React.Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: props.account ? props.account.firstName : "",
+      lastName: props.account ? props.account.lastName : "",
+      username: props.account ? props.account.username : "",
+      email: props.account ? props.account.username : "",
+    };
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -34,6 +37,7 @@ class AccountForm extends React.Component {
       email: "",
     });
   };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
