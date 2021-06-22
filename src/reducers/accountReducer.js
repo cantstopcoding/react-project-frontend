@@ -26,7 +26,6 @@ const accountReducer = (
       return { ...state, items: [action.payload] };
     case "ADD_ACCOUNT":
       // spread opperator video 6 1:06:19
-      debugger;
       return { ...state, accounts: [...state.accounts, action.payload] };
     case "ADD_ITEM":
       return payload;

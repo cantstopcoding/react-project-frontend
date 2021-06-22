@@ -16,28 +16,25 @@ class AccountsContainer extends Component {
   render() {
     return (
       <div>
-        <React.Fragment>
-          <Layout>
-            <Switch>
-              <Route exact path="/accounts/new" component={AccountInput} />
-              <Route
-                exact
-                path="/accounts/:id"
-                render={(routerProps) => (
-                  <Account {...routerProps} accounts={this.props.accounts} />
-                )}
-              />
-              <Route
-                exact
-                path="/accounts"
-                render={(routerProps) => (
-                  <Accounts {...routerProps} accounts={this.props.accounts} />
-                )}
-              />
-              {/* <Route component={NoMatch} /> */}
-            </Switch>
-          </Layout>
-        </React.Fragment>
+        <Layout>
+          <Switch>
+            <Route exact path="/accounts/new" component={AccountInput} />
+            <Route
+              exact
+              path="/accounts/:id"
+              render={(routerProps) => (
+                <Account {...routerProps} accounts={this.props.accounts} />
+              )}
+            />
+            <Route
+              exact
+              path="/accounts"
+              render={(routerProps) => (
+                <Accounts {...routerProps} accounts={this.props.accounts} />
+              )}
+            />
+          </Switch>
+        </Layout>
       </div>
     );
   }
