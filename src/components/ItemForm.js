@@ -20,7 +20,6 @@ class ItemForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     if (this.props.account) {
       this.props.addItem(this.state, this.props.account.id);
     } else {
