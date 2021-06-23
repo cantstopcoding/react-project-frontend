@@ -7,8 +7,8 @@ import ItemsContainer from "../containers/ItemsContainer";
 
 const Account = (props) => {
   let account = props.accounts.filter(
-    // match.params.id is a string, not a number!!!
     (account) => `${account.id}` == props.match.params.id
+    // match.params.id is a string, not a number!!!
   )[0];
 
   return (

@@ -1,3 +1,13 @@
+To use this app, go to https://github.com/cantstopcoding/react-project-caroline-dambrosio-designs-backend and fork and clone the back-end to start up the server. Run the following commands inside the directory:
+
+$ bundle install
+
+$ rails db:migrate
+
+$ rails db:seed
+
+$ You can see the api http://localhost:3001/api/v1/accounts
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -9,7 +19,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.

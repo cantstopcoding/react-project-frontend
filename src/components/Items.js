@@ -8,7 +8,6 @@ const Items = (props) => {
   console.log("ITEM", props.items);
 
   const handleDelete = (item) => {
-    // debugger
     props.deleteItem(item.id, item.accountId);
   };
 
