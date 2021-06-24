@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { deleteItem } from "../actions/deleteItem";
 import ItemEditOnAccount from "./ItemEditOnAccount";
 import { Card, CardDeck } from "react-bootstrap";
-import IncrementComponent from "./IncrementComponent";
 
 class Items extends React.Component {
   state = {
