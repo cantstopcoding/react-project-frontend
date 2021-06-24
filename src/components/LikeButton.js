@@ -33,7 +33,7 @@ class LikeButton extends React.Component {
         <br />
         Increment By:
         <input
-          value={this.state.name}
+          value={this.state.number}
           name="number"
           onChange={this.handleChange}
         />
