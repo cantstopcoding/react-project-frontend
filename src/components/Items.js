@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { deleteItem } from "../actions/deleteItem";
 import ItemEditOnAccount from "./ItemEditOnAccount";
 import { Card, CardDeck } from "react-bootstrap";
+import LikeButton from "./LikeButton";
 
 class Items extends React.Component {
   state = {
@@ -37,6 +38,7 @@ class Items extends React.Component {
       return (event.target.innerText = html + stateNumber);
     }
   };
+
   render() {
     return (
       <div>
@@ -72,6 +74,7 @@ class Items extends React.Component {
                       >
                         0
                       </button>
+                      <LikeButton />
                       <ItemEditOnAccount item={item} />
                     </Card.Body>
                   </Card>
