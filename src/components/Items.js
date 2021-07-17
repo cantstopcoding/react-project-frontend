@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteItem } from "../actions/deleteItem";
-import ItemEditOnAccount from "./ItemEditOnAccount";
-import { Card, CardDeck } from "react-bootstrap";
-import LikeButton from "./LikeButton";
+import { CardDeck } from "react-bootstrap";
+import ItemCard from "./ItemCard";
 
 class Items extends React.Component {
   state = {
@@ -57,28 +56,7 @@ class Items extends React.Component {
           <CardDeck style={{ display: "flex", flexDirection: "row" }}>
             {this.props.items &&
               this.props.items.map((item) => (
-                <div key={item.id}>
-                  <Card style={{ width: "21.5rem", height: "97.5%" }}>
-                    <Card.Img variant="top" src={item.imageUrl} />
-                    <Card.Body>
-                      <Card.Title>{item.name}</Card.Title>
-                      Price: ${item.price}
-                      <br />
-                      Description: {item.description}
-                      <br />
-                      <button onClick={() => this.handleDelete(item)}>
-                        Delete
-                      </button>
-                      <button
-                        onClick={(e) => this.incrementNumber(e, this.state)}
-                      >
-                        0
-                      </button>
-                      <LikeButton />
-                      <ItemEditOnAccount item={item} />
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ItemCard key={item.id} item={item} />
               ))}
           </CardDeck>
         </div>
