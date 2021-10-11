@@ -4,7 +4,9 @@ import ItemEditOnAccount from "./ItemEditOnAccount";
 
 export default class ItemCard extends Component {
   state = {
-    number: "0",
+    number: this.props.items,
+    // whate is the state? the state should be the value of the like key in the api.
+    // get the state.
   };
 
   incrementNumber(event) {
@@ -26,7 +28,13 @@ export default class ItemCard extends Component {
               Delete
             </button>
             <button onClick={(e) => this.incrementNumber(e, this.state)}>
-              {this.state.number}
+              {this.props.item.likes}
+              {/* when an event happens, what kind of request do I want to make, and in what way do I want to manupulate the dom? */}
+              {/* The event is the the click event */}
+              {/* when the button is clicked, in the api, I want to add 1 to the like attribute in the api */}
+              {/* I want to make a post request */}
+              {/* and I want to manipulate the dom by changing the the number in the state.  */}
+              {/* then i want to fetch that api and return the new account, with the updated likes attribute */}
             </button>
             <ItemEditOnAccount item={this.props.item} />
           </Card.Body>
