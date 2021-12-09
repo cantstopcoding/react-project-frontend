@@ -1,45 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-class LikeButton extends React.Component {
-  state = {
-    number: "",
-  };
+const LikeButton = () => {
+  const [count, setCount] = useState(0);
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  incrementNumber = (event, state) => {
-    console.log(event.target.innerText);
-    const innerText = parseInt(event.target.innerText);
-    const stateNumber = parseInt(state.number);
-
-    if (isNaN(stateNumber)) {
-      return event.target.innerText;
-    } else {
-      return (event.target.innerText = innerText + stateNumber);
-    }
-  };
-
-  render() {
-    return (
-      <div>
-        <br />
-        <button onClick={(e) => this.incrementNumber(e, this.state)}>
-          0
-        </button>{" "}
-        <br />
-        Increment By:
-        <input
-          value={this.state.number}
-          name="number"
-          onChange={this.handleChange}
-        />
-      </div>
-    );
+  function increment() {
+    setCount((prevCount) => prevCount + 1);
   }
-}
+
+  return (
+    <>
+      <button onClick={increment}>{count}</button>
+    </>
+  );
+};
 
 export default LikeButton;
