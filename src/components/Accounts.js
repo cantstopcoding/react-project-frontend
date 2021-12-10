@@ -10,14 +10,14 @@ const Accounts = (props) => {
   }
 
   return (
-    <div>
+    <>
       {props.accounts.map((account) => (
         <li key={account.id}>
           <Link to={`/accounts/${account.id}`}>{account.firstName}</Link>
           <button onClick={() => handleDelete(account)}>Delete</button>
         </li>
       ))}
-    </div>
+    </>
   );
 };
 
